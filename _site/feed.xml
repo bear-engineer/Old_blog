@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-18T17:41:08+09:00</updated><id>http://localhost:4000/</id><title type="html">Younlab</title><subtitle>Stylish, Two-Column Jekyll Theme</subtitle><entry><title type="html">Halve Jekyll Theme</title><link href="http://localhost:4000/halve-theme/" rel="alternate" type="text/html" title="Halve Jekyll Theme" /><published>2016-05-29T00:00:00+09:00</published><updated>2016-05-29T00:00:00+09:00</updated><id>http://localhost:4000/halve-theme</id><content type="html" xml:base="http://localhost:4000/halve-theme/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/halve-home-image.png&quot; alt=&quot;Home Page of Halve&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-18T18:39:41+09:00</updated><id>http://localhost:4000/</id><title type="html">Younlab</title><subtitle>Stylish, Two-Column Jekyll Theme</subtitle><entry><title type="html">시퀀스타입(tuple, list)</title><link href="http://localhost:4000/%EC%8B%9C%ED%80%80%EC%8A%A4-%ED%83%80%EC%9E%85/" rel="alternate" type="text/html" title="시퀀스타입(tuple, list)" /><published>2018-05-18T00:00:00+09:00</published><updated>2018-05-18T00:00:00+09:00</updated><id>http://localhost:4000/%EC%8B%9C%ED%80%80%EC%8A%A4%20%ED%83%80%EC%9E%85</id><content type="html" xml:base="http://localhost:4000/%EC%8B%9C%ED%80%80%EC%8A%A4-%ED%83%80%EC%9E%85/">&lt;p&gt;#시퀀스타입(tuple, list)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt;는 [ ]’대괄호’, &lt;strong&gt;tuple&lt;/strong&gt;은 ( )’소괄호’로 표현되며 &lt;strong&gt;list&lt;/strong&gt;는 &lt;code class=&quot;highlighter-rouge&quot;&gt;.append()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.expend()&lt;/code&gt;라는 내장함수로 값을 변경할 수 있지만 &lt;strong&gt;tuple&lt;/strong&gt;는 한번 값이 정해지면 변경할수 없다.&lt;/p&gt;
+
+&lt;p&gt;#list를 만들수 있는 방법을 모아보자!&lt;/p&gt;
+
+&lt;p&gt;결과값은 모두 같다.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;list_set = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+list_set = list(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+list_set = '1, 2, 3, 4, 5, 6, 7, 8, 9'.split(',')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><category term="python" /><summary type="html">list 와 tuple를 되는대로 만들어보자!</summary></entry><entry><title type="html">Halve Jekyll Theme</title><link href="http://localhost:4000/halve-theme/" rel="alternate" type="text/html" title="Halve Jekyll Theme" /><published>2016-05-29T00:00:00+09:00</published><updated>2016-05-29T00:00:00+09:00</updated><id>http://localhost:4000/halve-theme</id><content type="html" xml:base="http://localhost:4000/halve-theme/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/images/halve-home-image.png&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/halve-home-image.png&quot; alt=&quot;Home Page of Halve&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;center&gt;&lt;b&gt;Halve&lt;/b&gt; is a stylish, two-column jekyll theme.&lt;/center&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -1118,8 +1130,4 @@ Available values: [1..3].&lt;/li&gt;
 &lt;ul&gt;
   &lt;li&gt;The post title renders the word “with” in &lt;em&gt;italics&lt;/em&gt; and the word “Markdown” in &lt;strong&gt;bold&lt;/strong&gt;.&lt;/li&gt;
   &lt;li&gt;The post title markup should be removed from the browser window / tab.&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="css" /><category term="html" /><category term="title" /><summary type="html">Verify that:</summary></entry><entry><title type="html">Layout: Header Image (Vertical)</title><link href="http://localhost:4000/layout-header-image-vertical/" rel="alternate" type="text/html" title="Layout: Header Image (Vertical)" /><published>2012-03-15T00:00:00+09:00</published><updated>2012-03-15T00:00:00+09:00</updated><id>http://localhost:4000/layout-header-image-vertical</id><content type="html" xml:base="http://localhost:4000/layout-header-image-vertical/">&lt;p&gt;This post should display a &lt;strong&gt;header image&lt;/strong&gt;, if the theme supports it.&lt;/p&gt;
-
-&lt;p&gt;Non-square images can provide some unique styling issues.&lt;/p&gt;
-
-&lt;p&gt;This post tests a vertical header image.&lt;/p&gt;</content><author><name></name></author><category term="edge case" /><category term="featured image" /><category term="image" /><category term="layout" /><summary type="html">This post should display a header image, if the theme supports it.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/unsplash-image-6.jpg" /></entry></feed>
+&lt;/ul&gt;</content><author><name></name></author><category term="css" /><category term="html" /><category term="title" /><summary type="html">Verify that:</summary></entry></feed>
