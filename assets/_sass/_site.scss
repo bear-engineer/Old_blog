@@ -1,23 +1,68 @@
+.post-list-title {
+  font-size     : 150%;
+  font-weight   : 700;
+  padding-bottom: 16px;
+  color         : #999999;
+}
+
+.profil-wrap {
+  h2 {
+    text-align : center;
+    color      : #fff;
+    font-weight: 700;
+    margin     : 16px 0 0;
+  }
+
+  p {
+    margin-top: 8px;
+    width     : 100%;
+    text-align: center;
+    color     : #fff;
+  }
+}
+
 .block-left {
-  float: left;
+  float  : left;
+  // -webkit-box-shadow: -11px 0 112px -25px rgba(0,0,0,0.4);
+  // -moz-box-shadow   : -11px 0 112px -25px rgba(0,0,0,0.4);
+  // box-shadow        : -11px 0 112px -25px rgba(0,0,0,0.4);
+  z-index: 100;
 
   .content {
-    z-index : 1;
-    position: relative;
+    z-index         : 1;
+    position        : relative;
+    width           : 100%;
+    margin          : 0 auto;
+    background-image: linear-gradient(-45deg, #ffecd2 0%, $orange 100%);
   }
 }
 
 .block-right {
   float     : right;
   overflow-y: auto;
+
+  .content {
+    max-width: 960px !important;
+    width    : 100%;
+    margin   : 0 auto;
+    position : relative;
+  }
+
+  .content:after {
+    content: '';
+    height : 0;
+    display: block;
+    clear  : both;
+  }
 }
 
 .block-left {
-  width: 30%;
+  width     : 20%;
+  background: none !important;
 }
 
 .block-right {
-  width: 70%;
+  width: 80%;
   // background: #FAF9FA;
 }
 
@@ -25,10 +70,9 @@
 .block-right {
   height  : 100%;
   position: relative;
-  display : table;
-
+  // display : table;
   > div {
-    display       : table-cell;
+    // display       : table-cell;
     vertical-align: middle;
   }
 
@@ -43,9 +87,7 @@
 }
 
 .content {
-  padding  : 60px;
-  max-width: 600px;
-  margin   : 0 auto;
+  padding: 16px;
 }
 
 canvas {
@@ -123,8 +165,8 @@ canvas {
 
 .posts-menu-icon {
   position  : absolute;
-  top       : 30px;
-  right     : 90px;
+  top       : 0;
+  right     : 0;
   width     : 20px;
   height    : 25px;
   border    : 2px solid $gray;
@@ -192,6 +234,13 @@ canvas {
   &.show {
     display: block;
   }
+}
+
+.post-list:after {
+  content: '';
+  height : 0;
+  display: block;
+  clear  : both;
 }
 
 .projects-menu {
@@ -317,11 +366,11 @@ canvas {
 }
 
 .logo {
-  max-width      : 150px;
-  display        : inline-block;
+  max-width      : 120px;
+  display        : block;
   height         : auto;
   background-size: 100%;
-  margin         : 0 auto;
+  margin         : 60px auto 0;
   position       : relative;
   font           : 0/0 verdana;
   color          : transparent;
@@ -501,12 +550,17 @@ canvas {
   }
 
   .logo {
-    top     : 20px;
-    left    : 20px;
-    position: absolute;
+    // top     : 20px;
+    // left    : 20px;
+    // position: absolute;
+    widows       : 120px;
+    height       : 120px;
+    overflow     : hidden;
+    border-radius: 120px;
+    margin       : 32px auto 0;
 
     img {
-      width : 50px;
+      width : 100%;
       height: auto;
     }
 
@@ -524,6 +578,7 @@ canvas {
   color        : rgba($white, 0.6);
   -ms-word-wrap: break-word;
   word-wrap    : break-word;
+  margin       : 0 0 0 !important;
 
   em {
     font-style: italic;
@@ -540,22 +595,24 @@ canvas {
   > li {
     margin-bottom     : 23px;
     padding           : 16px;
+    float             : left;
+    width             : 100%;
     /*darken($white, 8.2353)*/
     background        : #fff;
-    border-radius     : 3px;
+    border-radius     : 5px;
     box-sizing        : border-box;
     list-style        : none;
-    -webkit-box-shadow: 0 4px 40px -13px rgba(0,0,0,0.2);
-    -moz-box-shadow   : 0 4px 40px -13px rgba(0,0,0,0.2);
-    box-shadow        : 0 4px 40px -13px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0 4px 40px -13px rgba(0,0,0,0.4);
+    -moz-box-shadow   : 0 4px 40px -13px rgba(0,0,0,0.4);
+    box-shadow        : 0 4px 40px -13px rgba(0,0,0,0.4);
 
     &:last-child {
       // border: none;
     }
 
     h2 {
-      font-size    : 30px;
-      margin-bottom: 15px;
+      font-size: 30px;
+      margin   : 0 0 15px;
     }
 
     p {
@@ -564,7 +621,7 @@ canvas {
 
     .date {
       color         : $orange;
-      float         : right;
+      // float         : right;
       display       : inline-block;
       font-size     : 15px;
       padding-top   : 10px;
@@ -572,11 +629,17 @@ canvas {
     }
 
     .post-title {
-      display  : inline-block;
-      max-width: 75%;
+      display   : inline-block;
+      max-width : 100%;
+      transition: all 0.2s;
+      font-size : 80%;
+
+      span {
+        transition: all 0.2s;
+      }
 
       &:hover span {
-        border-bottom: 1px dotted $orange;
+        color: $orange;
       }
     }
   }
@@ -587,7 +650,8 @@ canvas {
 }
 
 .tags {
-  margin-top: 20px;
+  // margin-top: 20px;
+  padding: 0 !important;
 
   > li {
     display       : inline-block;
@@ -642,7 +706,7 @@ canvas {
   }
 
   a:not(.btn):not(.pagination_pager) {
-    color        : #399f62;
+    color        : $orange;
     border-bottom: 1px dotted $orange;
   }
 
@@ -667,10 +731,9 @@ canvas {
 
 .post-title-section {
   // position: absolute;
-  bottom: 50px;
-  left  : 50px;
-  right : 50px;
-
+  // bottom: 50px;
+  // left  : 50px;
+  // right : 50px;
   .section-title {
     position : relative;
     left     : auto;
@@ -687,17 +750,16 @@ canvas {
   }
 
   .section-line {
-    color        : $orange;
-    position     : relative;
-    display      : -webkit-box;
-    display      : -moz-box;
-    display      : -ms-flexbox;
-    display      : -webkit-flex;
-    display      : flex;
-    align-items  : center;
-    font-size    : 25px;
-    margin-bottom: 20px;
-
+    color      : $orange;
+    position   : relative;
+    display    : -webkit-box;
+    display    : -moz-box;
+    display    : -ms-flexbox;
+    display    : -webkit-flex;
+    display    : flex;
+    align-items: center;
+    font-size  : 14px;
+    // margin-bottom: 20px;
     &:after {
       content         : '';
       -webkit-box-flex: 1;
@@ -747,7 +809,7 @@ canvas {
 
 .date-highlight {
   text-align : center;
-  margin     : 50px 0;
+  margin     : 16px 0 50px;
   color      : darken($white, 40);
   display    : -webkit-box;
   display    : -moz-box;
@@ -808,8 +870,9 @@ canvas {
 
   .block-left,
   .block-right {
-    float: none;
-    width: 100%;
+    float     : none;
+    width     : 100%;
+    box-shadow: none;
   }
 
   html {
@@ -870,12 +933,12 @@ canvas {
   }
 
   .date-highlight {
-    margin: 80px 0 40px;
+    margin: 16px 0 50px;
   }
 
   .post-title-section {
     .section-line {
-      display: none;
+      // display: none;
     }
 
     .section-title {
@@ -901,7 +964,7 @@ canvas {
 .entry-meta {
   font-size     : 0.75rem;
   text-transform: uppercase;
-  padding-left  : 0;
+  padding-left  : 0 !important;
   display       : none; // hide header meta on small screens
   @media screen and (min-width: $small) {
     display: block;
@@ -912,6 +975,7 @@ canvas {
   }
 
   li {
+    padding-left   : 0;
     list-style-type: none;
     display        : inline;
   }
