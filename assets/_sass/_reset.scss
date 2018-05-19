@@ -1,12 +1,13 @@
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
 *,
-*:before,
-*:after {
-  box-sizing:border-box
+*:after,
+*:before {
+  box-sizing: border-box;
 }
+
 html {
-  font-size: 18px;
-  -ms-text-size-adjust: 100%;
+  font-size               : 18px;
+  -ms-text-size-adjust    : 100%;
   -webkit-text-size-adjust: 100%;
   @media screen and (max-width: $small) {
     font-size: 16px;
@@ -17,28 +18,106 @@ body {
   margin: 0;
 }
 
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-  margin:0;
-  padding:0;
-  border:0;
-  font:inherit;
-  font-size:100%;
-  vertical-align:baseline
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin        : 0;
+  padding       : 0;
+  border        : 0;
+  font          : inherit;
+  font-size     : 100%;
+  vertical-align: baseline;
 }
 
 ::selection {
-  color: $white;
+  color     : $white;
   background: #4dbe7a;
 }
 
 ::-moz-selection {
-  color: $white;
+  color     : $white;
   background: #4dbe7a;
 }
-
 /* HTML5 display definitions
    ========================================================================== */
-
 article,
 aside,
 details,
@@ -63,36 +142,32 @@ video {
 
 audio:not([controls]) {
   display: none;
-  height: 0;
+  height : 0;
 }
 
 progress {
   vertical-align: baseline;
 }
 
-template,
-[hidden] {
+[hidden],
+template {
   display: none;
 }
-
 /* Links
    ========================================================================== */
-
 a {
   background-color: transparent;
 }
 
 a:active,
-a:hover,
-a:focus {
+a:focus,
+a:hover {
   outline-width: 0;
 }
-
 /* Text-level semantics
    ========================================================================== */
-
 abbr[title] {
-  border-bottom: none;
+  border-bottom  : none;
   text-decoration: underline;
   text-decoration: underline dotted;
 }
@@ -113,12 +188,12 @@ dfn {
 
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin   : 0.67em 0;
 }
 
 mark {
   background-color: #ff0;
-  color: #000;
+  color           : #000;
 }
 
 small {
@@ -127,9 +202,9 @@ small {
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
+  font-size     : 75%;
+  line-height   : 0;
+  position      : relative;
   vertical-align: baseline;
 }
 
@@ -140,10 +215,8 @@ sub {
 sup {
   top: -0.5em;
 }
-
 /* Embedded content
    ========================================================================== */
-
 img {
   border-style: none;
 }
@@ -151,10 +224,8 @@ img {
 svg:not(:root) {
   overflow: hidden;
 }
-
 /* Grouping content
    ========================================================================== */
-
 code,
 kbd,
 pre,
@@ -167,16 +238,14 @@ figure {
 }
 
 hr {
-  box-sizing: content-box;
-  overflow: visible;
-  height: 1px;
+  box-sizing      : content-box;
+  overflow        : visible;
+  height          : 1px;
   background-color: #dedede;
-  border: 0;
+  border          : 0;
 }
-
 /* Forms
    ========================================================================== */
-
 button,
 input,
 select,
@@ -206,10 +275,10 @@ select {
   text-transform: none;
 }
 
-button,
 [type="button"],
 [type="reset"],
-[type="submit"] {
+[type="submit"],
+button {
   cursor: pointer;
 }
 
@@ -226,7 +295,7 @@ html [type="button"],
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
+  border : 0;
   outline: 0;
   padding: 0;
 }
@@ -237,17 +306,17 @@ input:-moz-focusring {
 }
 
 fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
+  border : 1px solid #c0c0c0;
+  margin : 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
+  box-sizing : border-box;
+  color      : inherit;
+  display    : table;
+  max-width  : 100%;
+  padding    : 0;
   white-space: normal;
 }
 
@@ -258,7 +327,7 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
-  padding: 0;
+  padding   : 0;
 }
 
 [type="number"]::-webkit-inner-spin-button,
