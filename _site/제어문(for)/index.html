@@ -1,120 +1,167 @@
-<!-- --- layout: compress --- -->
-
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:4000/css/site.css">
   <title>제어문(for) &#8211; Younlab</title>
-   
-  <meta name="description" content="if, elif, else">  
-  <meta name="keywords" content="python">
-  <!-- Twitter Cards -->
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="halve.png">
-  <meta name="twitter:title" content="제어문(for)"> 
-  <meta name="twitter:description" content="if, elif, else"> 
-  <meta name="twitter:site" content="@username">
-  <meta name="twitter:creator" content="@username">
-  <!-- Open Graph -->
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="제어문(for)"> 
-  <meta property="og:description" content="if, elif, else">
-  <meta property="og:url" content="http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/">
-  <meta property="og:site_name" content="Younlab">
-  <meta property="og:image" content="http://localhost:4000/images/halve.png"> 
-  <link rel="canonical" href="http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/">
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" />
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
   <!-- Handheld -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Feed -->
-  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Younlab" />
-  <!-- Favicons -->
-  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" />
-  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
-  <!-- Left Block Image for Posts -->
-  
-  <style type="text/css">
-    #posts.inner-post-page .block-left {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(http://localhost:4000/images/unsplash-gallery-image-3.jpg) no-repeat;
-      background-size: cover;
-    }
 
-  </style>
-  
-  <!-- Left Block Images for Home and Pages -->
-  <style type="text/css">
-    #posts .block-left {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(http://localhost:4000/images/unsplash-image-10.jpg) no-repeat;
-      background-size: cover, cover;
-    }
-
-    .block-left {
-      background: linear-gradient(rgba(44, 45, 51, 0.9), rgba(44, 45, 51, 0.9)),
-      url(http://localhost:4000/images/home.png) no-repeat;
-      background-size: cover;
-    }
-
-  </style>
 </head>
 
+<body>
 
-  <body id="posts" class="inner-post-page">
+  <!-- header -->
+  <header>
+  <!-- 프로필영역 -->
+  <article class="profile-wrap">
+    <h2 class="logo-text"><a href="">Youn x lab</a></h2>
+    <div></div>
+  </article>
 
-    <div class="block-left">
-      <div class="content">
-        <a href="http://localhost:4000" class="logo"><img src="http://localhost:4000/images/halve.png"></a>
-        <div class="profil-wrap">
-          <h2>Sehyeon Youn</h2>
-          <p>Preliminary junior web programmer</p>
-        </div>
+  <!-- 사이드바 네비게이션 -->
+  <nav>
+    <ul class="menu-wrap">
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <ul class="social-links">
+        <li><a href="https://github.com/Younlab"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://facebook.com/d.sehyeon"><i class="fa fa-fw fa-facebook"></i></a></li>
+      </ul>
+    </ul>
+  </nav>
 
-      </div>
-    </div>
+  <!-- post list toggle button -->
+  <button id="post-button" class="hamburger hamburger--spring" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
 
-    <div class="block-right" style="background: #fff;">
-      <!-- <div class="share-buttons">
-        
-  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-  <a href="https://plus.google.com/share?url=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+</header>
 
 
-      </div> -->
-      <!-- <a title="projects" class="projects-menu-icon">
-        <span></span>
-      </a> -->
-      <div class="inner-post content">
-        <!-- <a href="../posts.html" title="posts" class="posts-menu-icon"></a> -->
-        <div class="post-title-section">
-          <h1 class="section-title">제어문(for)
-</h1>
-          <div class="section-line">Posts <em>/</em><a href="http://localhost:4000/posts">Back to posts</a> <em>/</em></div>
+  <!-- content-wrap -->
+  <section class="content-wrap">
 
-        </div>
+    <!-- post-list -->
+    <!-- post-list -->
+<aside class="left-post-wrap" id="post-list-wrap">
+  <article class="post-list-head-text">
+    <h3>Post List</h3>
+  </article>
+  <ul>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A1%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/">
+          Python 순차검색
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-23">23 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/">
+          Python 선택정렬
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-23">23 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-Class/">
+          Python Class
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-23">23 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE/">
+          Python 함수
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-21">21 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/">
+          제어문(for)
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-20">20 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(if,-elif,-else1)/">
+          제어문(if, elif, else)
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-20">20 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(for)-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/">
+          제어문(for) 연습문제
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-20">20 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/">
+          시퀀스타입(tuple, list)
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-18">18 May 2018</time>
+        </p>
+      </li>
+    
 
-        <div class="date-highlight">20 May 2018</div>
-        <p>#for 문(조건에 따른 순회문)</p>
+  </ul>
+</aside>
+
+
+    <!-- document-wrap -->
+    <section class="right-content-wrap">
+      <section class="content-title-wrap">
+        <article>
+            <h2>제어문(for)</h2>
+            <div class="date-highlight">20 May 2018</div>
+
+          </article>
+      </section>
+        <!-- document-wrap -->
+  <section class="content-document-wrap">
+    <article>
+      <h3 id="for-문조건에-따른-순회문">for 문(조건에 따른 순회문)</h3>
 
 <p>시퀀스형 데이터 (<strong>list, tuple, dictionary</strong>)를 순회하고자 할때 사용된다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for 'for문에서 사용할 변수명' in '시퀀스형 데이터':
-    항목에 적용할 조건
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="s">'for문에서 사용할 변수명'</span> <span class="ow">in</span> <span class="s">'시퀀스형 데이터'</span><span class="p">:</span>
+    <span class="err">항목에</span> <span class="err">적용할</span> <span class="err">조건</span>
 </code></pre></div></div>
 
 <p>예제</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list_set = ['red', 'green', 'Yellow', 'blue']
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span> <span class="o">=</span> <span class="p">[</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'green'</span><span class="p">,</span> <span class="s">'Yellow'</span><span class="p">,</span> <span class="s">'blue'</span><span class="p">]</span>
 
-for color in list_set:
-    print(color)
+<span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">list_set</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
 </code></pre></div></div>
 <p>순서대로 코드를 번역하자면</p>
 
@@ -127,26 +174,26 @@ for color in list_set:
   </li>
 </ul>
 
-<p>#딕셔너리를 출력할때</p>
+<h3 id="딕셔너리를-출력할때">딕셔너리를 출력할때</h3>
 
 <p>딕셔너리를 출력할때 파이썬의 내장함수를 사용하지않으면 default값으로 키값을 출력되게끔 되어있다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>color = {
-  'red':'빨강',
-  'blue':'파랑',
-  'green':'초록',
-}
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">color</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'red'</span><span class="p">:</span><span class="s">'빨강'</span><span class="p">,</span>
+  <span class="s">'blue'</span><span class="p">:</span><span class="s">'파랑'</span><span class="p">,</span>
+  <span class="s">'green'</span><span class="p">:</span><span class="s">'초록'</span><span class="p">,</span>
+<span class="p">}</span>
 
-for item in color:
-  print(item)
+<span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">color</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></div></div>
 <p>이 코드의 결과값은</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>red
-blue
-green
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">red</span>
+<span class="n">blue</span>
+<span class="n">green</span>
 </code></pre></div></div>
 <p>위의 결과값과 같은 기능을 하는 내장함수는 <code class="highlighter-rouge">.keys()</code> 다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for item in color.keys():
-  print(item)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 </code></pre></div></div>
 <p>위와 같은 역활을 하는 내장함수는 다음과 같다.</p>
 
@@ -157,17 +204,17 @@ green
 </ul>
 
 <p><code class="highlighter-rouge">.items()</code> 를 사용 할 경우 결과값을 tuple 데이터로 출력한다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for item in color.items():
-     print(item)
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+     <span class="k">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
 
-('red', '빨강')
-('blue', '파랑')
-('green', '초록')
+<span class="p">(</span><span class="s">'red'</span><span class="p">,</span> <span class="s">'빨강'</span><span class="p">)</span>
+<span class="p">(</span><span class="s">'blue'</span><span class="p">,</span> <span class="s">'파랑'</span><span class="p">)</span>
+<span class="p">(</span><span class="s">'green'</span><span class="p">,</span> <span class="s">'초록'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>tuple 데이터로 출력하지 않으려고 할 때에는 어떻게 하면 될까?</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for item in color.items():
-    print('{}: {}'.format(item[0], item[1]))
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">color</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'{}: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </code></pre></div></div>
 <p>포멧팅과 인덱스를 사용하여 tuple 데이터를 언패킹 하여 출력한다.
 해석해보자면</p>
@@ -178,115 +225,154 @@ green
   <li>인덱스의 값은 0부터 시작한다.</li>
 </ul>
 
-        <ul class="tags">
-          
-          <li><a href="http://localhost:4000/tags#python">python</a></li>
-           
-        </ul>
-        <br> 
+<h3 id="예제를-풀어보자">예제를 풀어보자</h3>
+
+<p>for문을 2개 중첩하여 (0,0), (0,1), (0,2), (0,3), (1,0), (1,1)….. (6,3)까지 출력되는 반복문을 구현한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'{i},{y}'</span><span class="p">)</span>
+
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>리스트 컴프리헨션을 중첩하여 위 결과를 갖는 리스트를 생성한다.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="두번째-값이-짝수일때만-출력">두번째 값이 짝수일때만 출력</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">y</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">'({i},{y})'</span><span class="p">)</span>
+
+<span class="c"># 리스트 컴프리헨션</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="n">f</span><span class="s">'({i},{y})'</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></div>
+
+      <!-- <br> 
   <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
   <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
   <a href="https://plus.google.com/share?url=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
- 
+ -->
+      
 <nav class="pagination">
+  
+  <a href="http://localhost:4000/Python-%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE/" class="pagination_pager" title="Python 함수
+">next</a>
+  
+
   
   <a href="http://localhost:4000/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(if,-elif,-else1)/" class="pagination_pager" title="제어문(if, elif, else)
 ">previous</a>
   
-  
-  <a href="#" class="pagination_pager disabled">next</a>
-  
 </nav>
 
 
-      </div>
-    </div>
-    <!-- JS -->
-<script src="http://localhost:4000/assets/js/main.min.js"></script>
+    </article>
 
- <div class="overlay">
-  <ul class="projects-menu">
-    
-      
-      
-      <li style="background:url(http://younlab.github.io/images/halve-home-image.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Halve"  target="_blank" rel="nofollow external">
-          <span>
-            Halve Jekyll Theme
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Moon" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Moon Jekyll Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Ramme" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Ramme Jekyll Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Daisy-Pelican-Theme/" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Daisy Pelican Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png) center center no-repeat;">
-        <a href="https://github.com/TaylanTatli/Block-Icon-Theme" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Block Icon Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png) center center no-repeat;">
-        <a href="http://younlab.github.io/StartPage/" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Start Page
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-  </ul>
-</div>
+  </section>
 
-  </body>
 
+
+      <!-- 푸터영역 -->
+      <footer>
+        <address>
+          <p>2018 &copy;  <a href="">younlab.github.io</a></p>
+        </address>
+      </footer>
+    </section>
+  </section>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $('#post-button').click(
+        function() {
+            $('#post-list-wrap').toggle(['swing', 'fast', '800']);
+        }
+    );
+
+    $('.hamburger').click(
+      function() {
+          $('button.hamburger').toggleClass('is-active');
+      }
+    );
+  </script>
+</body>
 </html>

@@ -1,117 +1,164 @@
-<!-- --- layout: compress --- -->
-
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://localhost:4000/css/site.css">
   <title>시퀀스타입(tuple, list) &#8211; Younlab</title>
-   
-  <meta name="description" content="list 와 tuple를 되는대로 만들어보자!">  
-  <meta name="keywords" content="python">
-  <!-- Twitter Cards -->
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="halve.png">
-  <meta name="twitter:title" content="시퀀스타입(tuple, list)"> 
-  <meta name="twitter:description" content="list 와 tuple를 되는대로 만들어보자!"> 
-  <meta name="twitter:site" content="@username">
-  <meta name="twitter:creator" content="@username">
-  <!-- Open Graph -->
-  <meta property="og:locale" content="en_US">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="시퀀스타입(tuple, list)"> 
-  <meta property="og:description" content="list 와 tuple를 되는대로 만들어보자!">
-  <meta property="og:url" content="http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/">
-  <meta property="og:site_name" content="Younlab">
-  <meta property="og:image" content="http://localhost:4000/images/halve.png"> 
-  <link rel="canonical" href="http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/">
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" />
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
   <!-- Handheld -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Feed -->
-  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Younlab" />
-  <!-- Favicons -->
-  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" />
-  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
-  <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
-  <!-- Left Block Image for Posts -->
-  
-  <style type="text/css">
-    #posts.inner-post-page .block-left {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(http://localhost:4000/images/unsplash-gallery-image-3.jpg) no-repeat;
-      background-size: cover;
-    }
 
-  </style>
-  
-  <!-- Left Block Images for Home and Pages -->
-  <style type="text/css">
-    #posts .block-left {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(http://localhost:4000/images/unsplash-image-10.jpg) no-repeat;
-      background-size: cover, cover;
-    }
-
-    .block-left {
-      background: linear-gradient(rgba(44, 45, 51, 0.9), rgba(44, 45, 51, 0.9)),
-      url(http://localhost:4000/images/home.png) no-repeat;
-      background-size: cover;
-    }
-
-  </style>
 </head>
 
+<body>
 
-  <body id="posts" class="inner-post-page">
+  <!-- header -->
+  <header>
+  <!-- 프로필영역 -->
+  <article class="profile-wrap">
+    <h2 class="logo-text"><a href="">Youn x lab</a></h2>
+    <div></div>
+  </article>
 
-    <div class="block-left">
-      <div class="content">
-        <a href="http://localhost:4000" class="logo"><img src="http://localhost:4000/images/halve.png"></a>
-        <div class="profil-wrap">
-          <h2>Sehyeon Youn</h2>
-          <p>Preliminary junior web programmer</p>
-        </div>
+  <!-- 사이드바 네비게이션 -->
+  <nav>
+    <ul class="menu-wrap">
+      <li><a href="">Home</a></li>
+      <li><a href="">About</a></li>
+      <ul class="social-links">
+        <li><a href="https://github.com/Younlab"><i class="fab fa-github"></i></a></li>
+        <li><a href="https://facebook.com/d.sehyeon"><i class="fa fa-fw fa-facebook"></i></a></li>
+      </ul>
+    </ul>
+  </nav>
 
-      </div>
-    </div>
+  <!-- post list toggle button -->
+  <button id="post-button" class="hamburger hamburger--spring" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </button>
 
-    <div class="block-right" style="background: #fff;">
-      <!-- <div class="share-buttons">
-        
-  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
-  <a href="https://plus.google.com/share?url=http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+</header>
 
 
-      </div> -->
-      <!-- <a title="projects" class="projects-menu-icon">
-        <span></span>
-      </a> -->
-      <div class="inner-post content">
-        <!-- <a href="../posts.html" title="posts" class="posts-menu-icon"></a> -->
-        <div class="post-title-section">
-          <h1 class="section-title">시퀀스타입(tuple, list)
-</h1>
-          <div class="section-line">Posts <em>/</em><a href="http://localhost:4000/posts">Back to posts</a> <em>/</em></div>
+  <!-- content-wrap -->
+  <section class="content-wrap">
 
-        </div>
+    <!-- post-list -->
+    <!-- post-list -->
+<aside class="left-post-wrap" id="post-list-wrap">
+  <article class="post-list-head-text">
+    <h3>Post List</h3>
+  </article>
+  <ul>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-%E1%84%89%E1%85%AE%E1%86%AB%E1%84%8E%E1%85%A1%E1%84%80%E1%85%A5%E1%86%B7%E1%84%89%E1%85%A2%E1%86%A8/">
+          Python 순차검색
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-23">23 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-%E1%84%89%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A2%E1%86%A8%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%85%E1%85%A7%E1%86%AF/">
+          Python 선택정렬
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-23">23 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-Class/">
+          Python Class
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-23">23 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/Python-%E1%84%92%E1%85%A1%E1%86%B7%E1%84%89%E1%85%AE/">
+          Python 함수
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-21">21 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/">
+          제어문(for)
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-20">20 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(if,-elif,-else1)/">
+          제어문(if, elif, else)
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-20">20 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(for)-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/">
+          제어문(for) 연습문제
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-20">20 May 2018</time>
+        </p>
+      </li>
+    
+      <li class="post-list">
+        <a class="post-list-title" href="/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/">
+          시퀀스타입(tuple, list)
+        </a>
+        <p class="post-list-date">
+          <time datetime="2018-05-18">18 May 2018</time>
+        </p>
+      </li>
+    
 
-        <div class="date-highlight">18 May 2018</div>
-        <p>#시퀀스타입(tuple, list)</p>
+  </ul>
+</aside>
+
+
+    <!-- document-wrap -->
+    <section class="right-content-wrap">
+      <section class="content-title-wrap">
+        <article>
+            <h2>시퀀스타입(tuple, list)</h2>
+            <div class="date-highlight">18 May 2018</div>
+
+          </article>
+      </section>
+        <!-- document-wrap -->
+  <section class="content-document-wrap">
+    <article>
+      <h3 id="시퀀스타입tuple-list">시퀀스타입(tuple, list)</h3>
 
 <p><strong>list</strong>는 [ ]’대괄호’, <strong>tuple</strong>은 ( )’소괄호’로 표현되며 <strong>list</strong>는 <code class="highlighter-rouge">.append()</code>, <code class="highlighter-rouge">.expend()</code>라는 내장함수로 값을 변경할 수 있지만 <strong>tuple</strong>는 한번 값이 정해지면 변경할수 없다.</p>
 
 <p>#list를 만들수 있는 방법을 모아보자!</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; list_set = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
-&gt;&gt;&gt; list_set = list(1, 2, 3, 4, 5, 6, 7, 8, 9)
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 
-&gt;&gt;&gt; list_set = '1, 2, 3, 4, 5, 6, 7, 8, 9'.split(',')
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span> <span class="o">=</span> <span class="s">'1, 2, 3, 4, 5, 6, 7, 8, 9'</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">','</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><code class="highlighter-rouge">list()</code>는 python의 리스트를 만들어주는 내장함수이다.
@@ -130,139 +177,77 @@
 <strong>list.sort( )</strong> : 값을 순서대로 정렬
 <strong>list.reverse( )</strong> : 값을 역순으로 정렬</p>
 
-<p>#tuple를 만들수 있는 방법을 모아보자!</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; tuple_set = (1, 2, 3, 4, 5, 6, 7, 8, 9)
-&gt;&gt;&gt; tuple_set = tuple(1, 2, 3, 4, 5, 6, 7, 8, 9)
+<h3 id="tuple를-만들수-있는-방법을-모아보자">tuple를 만들수 있는 방법을 모아보자!</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">tuple_set</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tuple_set</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 </code></pre></div></div>
 <p>튜플은 값이 결정되면 변경할수 없다. 리스트와 마찬가지로 생성, 추가는 자유롭지만, 삭제 수정이 불가능하다.</p>
 
-<p>#두 자료형 모두 인덱싱과 슬라이싱이 가능하다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; list_set = [1, 2, 3, 4, 5]
-&gt;&gt;&gt; tuple_set = (1, 2, 3, 4, 5)
-&gt;&gt;&gt; list_set[2] + tuple_set[3]
-7
+<h3 id="두-자료형-모두-인덱싱과-슬라이싱이-가능하다">두 자료형 모두 인덱싱과 슬라이싱이 가능하다.</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">tuple_set</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">tuple_set</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="mi">7</span>
 
-&gt;&gt;&gt;list_set[0:3]
-[1, 2, 3, 4]
+<span class="o">&gt;&gt;&gt;</span><span class="n">list_set</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p><strong>index</strong>은 <code class="highlighter-rouge">변수명+[자리번째 숫자]</code> 형식으로 사용하며  0부터 시작한다. 해당하는 숫자 번째 자리에 있는 요소를 가져온다.
 <strong>slice</strong>은 <code class="highlighter-rouge">변수명+[자리번째 숫자:마지막번째 숫자:건너뛸 숫자]</code> 형식으로 사용하며 만일 [0:10:2] 라고 입력했다면 1~10번째 자리를 출력하나 두번씩 건너뜀으로 아래와 같이 출력할것이다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;&gt;&gt; list_set =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-&gt;&gt;&gt; list_set[0:10:2]
-[1, 3, 5, 7, 9]
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span> <span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">list_set</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 </code></pre></div></div>
 
-        <ul class="tags">
-          
-          <li><a href="http://localhost:4000/tags#python">python</a></li>
-           
-        </ul>
-        <br> 
+      <!-- <br> 
   <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
   <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
   <a href="https://plus.google.com/share?url=http://localhost:4000/%E1%84%89%E1%85%B5%E1%84%8F%E1%85%AF%E1%86%AB%E1%84%89%E1%85%B3-%E1%84%90%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%B8/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
 
- 
+ -->
+      
 <nav class="pagination">
   
-  <a href="#" class="pagination_pager disabled">previous</a>
-  
-  
-  <a href="http://localhost:4000/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(if,-elif,-else1)/" class="pagination_pager" title="제어문(if, elif, else)
+  <a href="http://localhost:4000/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(for)-%E1%84%8B%E1%85%A7%E1%86%AB%E1%84%89%E1%85%B3%E1%86%B8%E1%84%86%E1%85%AE%E1%86%AB%E1%84%8C%E1%85%A6/" class="pagination_pager" title="제어문(for) 연습문제
 ">next</a>
+  
+
+  
+  <a href="#" class="pagination_pager disabled">previous</a>
   
 </nav>
 
 
-      </div>
-    </div>
-    <!-- JS -->
-<script src="http://localhost:4000/assets/js/main.min.js"></script>
+    </article>
 
- <div class="overlay">
-  <ul class="projects-menu">
-    
-      
-      
-      <li style="background:url(http://younlab.github.io/images/halve-home-image.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Halve"  target="_blank" rel="nofollow external">
-          <span>
-            Halve Jekyll Theme
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Moon" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Moon Jekyll Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Ramme" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Ramme Jekyll Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png) center center no-repeat;">
-        <a href="http://younlab.github.io/Daisy-Pelican-Theme/" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Daisy Pelican Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png) center center no-repeat;">
-        <a href="https://github.com/TaylanTatli/Block-Icon-Theme" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Block Icon Theme
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-      
-      
-      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png) center center no-repeat;">
-        <a href="http://younlab.github.io/StartPage/" class="inactive" target="_blank" rel="nofollow external">
-          <span>
-            Start Page
-            
-            <br><em>in progress</em>
-            
-          </span>
-        </a>
-        </li>
-    
-  </ul>
-</div>
+  </section>
 
-  </body>
 
+
+      <!-- 푸터영역 -->
+      <footer>
+        <address>
+          <p>2018 &copy;  <a href="">younlab.github.io</a></p>
+        </address>
+      </footer>
+    </section>
+  </section>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $('#post-button').click(
+        function() {
+            $('#post-list-wrap').toggle(['swing', 'fast', '800']);
+        }
+    );
+
+    $('.hamburger').click(
+      function() {
+          $('button.hamburger').toggleClass('is-active');
+      }
+    );
+  </script>
+</body>
 </html>

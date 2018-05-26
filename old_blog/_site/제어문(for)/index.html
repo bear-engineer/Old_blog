@@ -1,0 +1,292 @@
+<!-- --- layout: compress --- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> 
+  <title>제어문(for) &#8211; Younlab</title>
+   
+  <meta name="description" content="if, elif, else">  
+  <meta name="keywords" content="python">
+  <!-- Twitter Cards -->
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="halve.png">
+  <meta name="twitter:title" content="제어문(for)"> 
+  <meta name="twitter:description" content="if, elif, else"> 
+  <meta name="twitter:site" content="@username">
+  <meta name="twitter:creator" content="@username">
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="제어문(for)"> 
+  <meta property="og:description" content="if, elif, else">
+  <meta property="og:url" content="http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/">
+  <meta property="og:site_name" content="Younlab">
+  <meta property="og:image" content="http://localhost:4000/images/halve.png"> 
+  <link rel="canonical" href="http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/">
+  <!-- Handheld -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Feed -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Younlab" />
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/png" href="http://localhost:4000/favicon.png" />
+  <link rel="shortcut icon" href="http://localhost:4000/favicon.ico" />
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="http://localhost:4000/assets/css/main.css">
+  <!-- Left Block Image for Posts -->
+  
+  <style type="text/css">
+    #posts.inner-post-page .block-left {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(http://localhost:4000/images/unsplash-gallery-image-3.jpg) no-repeat;
+      background-size: cover;
+    }
+
+  </style>
+  
+  <!-- Left Block Images for Home and Pages -->
+  <style type="text/css">
+    #posts .block-left {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url(http://localhost:4000/images/unsplash-image-10.jpg) no-repeat;
+      background-size: cover, cover;
+    }
+
+    .block-left {
+      background: linear-gradient(rgba(44, 45, 51, 0.9), rgba(44, 45, 51, 0.9)),
+      url(http://localhost:4000/images/home.png) no-repeat;
+      background-size: cover;
+    }
+
+  </style>
+</head>
+
+
+  <body id="posts" class="inner-post-page">
+
+    <div class="block-left">
+      <div class="content">
+        <a href="http://localhost:4000" class="logo"><img src="http://localhost:4000/images/halve.png"></a>
+        <div class="profil-wrap">
+          <h2>Sehyeon Youn</h2>
+          <p>Preliminary junior web programmer</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="block-right" style="background: #fff;">
+      <!-- <div class="share-buttons">
+        
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+
+      </div> -->
+      <!-- <a title="projects" class="projects-menu-icon">
+        <span></span>
+      </a> -->
+      <div class="inner-post content">
+        <!-- <a href="../posts.html" title="posts" class="posts-menu-icon"></a> -->
+        <div class="post-title-section">
+          <h1 class="section-title">제어문(for)
+</h1>
+          <div class="section-line">Posts <em>/</em><a href="http://localhost:4000/posts">Back to posts</a> <em>/</em></div>
+
+        </div>
+
+        <div class="date-highlight">20 May 2018</div>
+        <p>#for 문(조건에 따른 순회문)</p>
+
+<p>시퀀스형 데이터 (<strong>list, tuple, dictionary</strong>)를 순회하고자 할때 사용된다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for 'for문에서 사용할 변수명' in '시퀀스형 데이터':
+    항목에 적용할 조건
+</code></pre></div></div>
+
+<p>예제</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>list_set = ['red', 'green', 'Yellow', 'blue']
+
+for color in list_set:
+    print(color)
+</code></pre></div></div>
+<p>순서대로 코드를 번역하자면</p>
+
+<ul>
+  <li>
+    <p>list_set 이라는 변수에 list를 만들어 red, green, yellow, blue 라는 문자열 자료를 할당한다.</p>
+  </li>
+  <li>
+    <p>반복문을 선언한다. 컬러라는 변수를 지정, list_set 데이터를 순회하여 데이터를 프린트(출력)하라</p>
+  </li>
+</ul>
+
+<p>#딕셔너리를 출력할때</p>
+
+<p>딕셔너리를 출력할때 파이썬의 내장함수를 사용하지않으면 default값으로 키값을 출력되게끔 되어있다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>color = {
+  'red':'빨강',
+  'blue':'파랑',
+  'green':'초록',
+}
+
+for item in color:
+  print(item)
+</code></pre></div></div>
+<p>이 코드의 결과값은</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>red
+blue
+green
+</code></pre></div></div>
+<p>위의 결과값과 같은 기능을 하는 내장함수는 <code class="highlighter-rouge">.keys()</code> 다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for item in color.keys():
+  print(item)
+</code></pre></div></div>
+<p>위와 같은 역활을 하는 내장함수는 다음과 같다.</p>
+
+<ul>
+  <li>.keys() 딕셔너리의 키값만 출력한다.</li>
+  <li>.values() 딕셔너리의 해당 키값이 가지고있는 데이터만을 출력한다.</li>
+  <li>.items() 딕셔너리의 키값과 데이터값 모두를 출력한다.</li>
+</ul>
+
+<p><code class="highlighter-rouge">.items()</code> 를 사용 할 경우 결과값을 tuple 데이터로 출력한다.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for item in color.items():
+     print(item)
+
+('red', '빨강')
+('blue', '파랑')
+('green', '초록')
+</code></pre></div></div>
+
+<p>tuple 데이터로 출력하지 않으려고 할 때에는 어떻게 하면 될까?</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for item in color.items():
+    print('{}: {}'.format(item[0], item[1]))
+</code></pre></div></div>
+<p>포멧팅과 인덱스를 사용하여 tuple 데이터를 언패킹 하여 출력한다.
+해석해보자면</p>
+<ul>
+  <li>’{}: {}’.format(item[0], item[1])</li>
+  <li>딕셔너리의 첫번째 값(키값)을 맨앞의 중괄호에 할당하라.</li>
+  <li>두번째 이하 동문</li>
+  <li>인덱스의 값은 0부터 시작한다.</li>
+</ul>
+
+        <ul class="tags">
+          
+          <li><a href="http://localhost:4000/tags#python">python</a></li>
+           
+        </ul>
+        <br> 
+  <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://plus.google.com/share?url=http://localhost:4000/%EC%A0%9C%EC%96%B4%EB%AC%B8(for)/" class="btn btn_google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+ 
+<nav class="pagination">
+  
+  <a href="http://localhost:4000/%E1%84%8C%E1%85%A6%E1%84%8B%E1%85%A5%E1%84%86%E1%85%AE%E1%86%AB(if,-elif,-else1)/" class="pagination_pager" title="제어문(if, elif, else)
+">previous</a>
+  
+  
+  <a href="#" class="pagination_pager disabled">next</a>
+  
+</nav>
+
+
+      </div>
+    </div>
+    <!-- JS -->
+<script src="http://localhost:4000/assets/js/main.min.js"></script>
+
+ <div class="overlay">
+  <ul class="projects-menu">
+    
+      
+      
+      <li style="background:url(http://younlab.github.io/images/halve-home-image.png) center center no-repeat;">
+        <a href="http://younlab.github.io/Halve"  target="_blank" rel="nofollow external">
+          <span>
+            Halve Jekyll Theme
+            
+          </span>
+        </a>
+        </li>
+    
+      
+      
+      <li style="background:url(https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png) center center no-repeat;">
+        <a href="http://younlab.github.io/Moon" class="inactive" target="_blank" rel="nofollow external">
+          <span>
+            Moon Jekyll Theme
+            
+            <br><em>in progress</em>
+            
+          </span>
+        </a>
+        </li>
+    
+      
+      
+      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Ramme/master/assets/img/screenshot-post.png) center center no-repeat;">
+        <a href="http://younlab.github.io/Ramme" class="inactive" target="_blank" rel="nofollow external">
+          <span>
+            Ramme Jekyll Theme
+            
+            <br><em>in progress</em>
+            
+          </span>
+        </a>
+        </li>
+    
+      
+      
+      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Daisy-Pelican-Theme/master/Preview-1.png) center center no-repeat;">
+        <a href="http://younlab.github.io/Daisy-Pelican-Theme/" class="inactive" target="_blank" rel="nofollow external">
+          <span>
+            Daisy Pelican Theme
+            
+            <br><em>in progress</em>
+            
+          </span>
+        </a>
+        </li>
+    
+      
+      
+      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/Block-Icon-Theme/master/Preview.png) center center no-repeat;">
+        <a href="https://github.com/TaylanTatli/Block-Icon-Theme" class="inactive" target="_blank" rel="nofollow external">
+          <span>
+            Block Icon Theme
+            
+            <br><em>in progress</em>
+            
+          </span>
+        </a>
+        </li>
+    
+      
+      
+      <li style="background:url(https://raw.githubusercontent.com/TaylanTatli/StartPage/master/preview.png) center center no-repeat;">
+        <a href="http://younlab.github.io/StartPage/" class="inactive" target="_blank" rel="nofollow external">
+          <span>
+            Start Page
+            
+            <br><em>in progress</em>
+            
+          </span>
+        </a>
+        </li>
+    
+  </ul>
+</div>
+
+  </body>
+
+</html>
